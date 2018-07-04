@@ -21,7 +21,7 @@ module.exports.upload = (req, res) => {
                         }
                         else {
                             console.log('****UPLOAD SUCCESS****');
-                            res.send(jsonResponse(200, 'SUCCESSFULLY', 'http://13.251.24.65:5001/' + req.body.name + '/' + fileName));
+                            res.send(jsonResponse(200, 'SUCCESSFULLY', apiService.url + '/' + req.body.name + '/' + fileName));
                         }
                     });
                 }
@@ -36,7 +36,7 @@ module.exports.upload = (req, res) => {
                 }
                 else {
                     console.log('****UPLOAD SUCCESS****');
-                    res.send(jsonResponse(200, 'SUCCESSFULLY', 'http://13.251.24.65:5001/' + req.body.name + '/' + fileName));
+                    res.send(jsonResponse(200, 'SUCCESSFULLY', apiService.url + '/' + req.body.name + '/' + fileName));
                 }
             });
         }

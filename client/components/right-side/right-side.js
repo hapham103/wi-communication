@@ -69,11 +69,11 @@ function Controller(apiService, $timeout, $element){
     }
     this.thumb = function(path) {
         let p = path.slice(25);
-        return 'http://13.251.24.65:5001/api/thumb/'+p+'?token='+self.token;
+        return apiService.url + '/api/thumb/'+p+'?token='+self.token;
     }
     this.download = function(path) {
         let p = path.slice(25);
-        return 'http://13.251.24.65:5001/api/download/'+p+'?token='+self.token;
+        return apiService.url + '/api/download/'+p+'?token='+self.token;
     }
     socket.on('sendMessage', function(data) {
         $timeout(function() {
