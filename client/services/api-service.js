@@ -30,6 +30,7 @@ angular.module(moduleName, []).service(serviceName, function ($http, Upload) {
             cb();
         });
     }
+    this.URL = URL;
     this.register = function(data, cb) {
         $http({
             method: 'POST',

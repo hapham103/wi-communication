@@ -14,7 +14,7 @@ module.exports.thumb = function(req, res) {
                 if(err) {
                     res.sendFile(original_dir);
                 }else{
-                    thumb({
+                   thumb({
                         source: original_dir,
                         destination: thumb_dir,
                         basename: md5(req.params.fileName),
@@ -58,4 +58,3 @@ module.exports.thumb = function(req, res) {
         }
     });
 }
-

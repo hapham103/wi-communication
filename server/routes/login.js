@@ -8,5 +8,7 @@ router.post('/login', function(req, res) {
 router.post('/register', function(req, res) {
     userCtrl.register(req, res);
 });
-
+router.post('/getUser', function(req, res) {
+    userCtrl.getUser(req, res);
+});
 module.exports = router;

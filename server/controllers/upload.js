@@ -3,6 +3,8 @@ var jsonResponse = require('./response');
 var PATH = require('path');
 var directoryExists = require('directory-exists');
 
+const URL = 'http://13.251.24.65:5001';
+
 module.exports.upload = (req, res) => {
     let folderUpload = PATH.join(__dirname, '../database/upload/' + req.body.name);
     directoryExists(folderUpload, (error, result) => {
@@ -31,6 +33,7 @@ module.exports.upload = (req, res) => {
             let fileName = Date().split(' ').join('') + file.name;
             let path = PATH.join(__dirname, '../database/upload/' + req.body.name + '/' + fileName);
             fs.copyFile(file.path, path, (err) => {
+                console.log(err);
                 if (err) {
                     res.send(jsonResponse(400, 'UPLOAD FAIL: ' + err));
                 }
